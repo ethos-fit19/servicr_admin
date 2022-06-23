@@ -1,6 +1,17 @@
 import axios from 'axios';
 const baseUrl = 'http://localhost:4000/api';
 
+
+
+//users
+export const getUsers = () => {
+    return axios.get(baseUrl + '/users', {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+};
+
 //vault-folders
 export const newFolder = (data) => {
     return axios.post(baseUrl + 'folders/', data, {
