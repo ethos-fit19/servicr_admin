@@ -30,7 +30,29 @@ const CategoryListComponent = ({ reload, search, setSearch }) => {
         }
     };
 
-    //add here
+    const deleteCategories = async(id) => {
+        try {
+            const response = await deletecatagory(id);
+            console.log('item deleted');
+            LoadCategories();
+        } catch (e) {
+            print(e);
+        }
+    };
+    const handleCategoriesSort = () => {
+        return categories
+          .filter((category) => {
+            if (search == '') {
+              return categories;
+            } else if (
+              category.name
+                .toLocaleLowerCase()
+                .includes(search.toLocaleLowerCase())
+            ) {
+              return categories;
+            }
+          });
+      };
 
     return (
         <div className='category_container'>
