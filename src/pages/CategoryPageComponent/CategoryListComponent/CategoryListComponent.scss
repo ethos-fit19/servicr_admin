@@ -18,7 +18,7 @@
     position: absolute;
     width: 1px;
   }
-
+  
   table tr {
     background-color: #f8f8f8;
     border-radius: 5px;
@@ -29,4 +29,36 @@
     box-shadow: 10px 10px 5px grey;
   }
   
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+  .fa-trash{
+    color: rgb(145, 0, 0);
+  }
 }
