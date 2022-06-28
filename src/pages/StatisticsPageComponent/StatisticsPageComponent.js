@@ -280,8 +280,47 @@ function StatisticsPageComponent() {
               </div>
             </Grid>
             {/* user list */}
-
-          </Grid>
+            <Grid item xs={12} id="users">
+              <div className="userlist" id="userlist">
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                  <Typography component="header" variant="h6">
+                    <Box sx={{ textAlign: 'center', m: 1 }}>Users list</Box>
+                  </Typography>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">type</th>
+                        <th scope="col">Mail</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {users.map((user) => (
+                        <tr key={user._id}>
+                          <td data-label="Name">
+                            <h6>
+                              <Link
+                                to={`/user/${user._id}`}
+                                className="linkuser"
+                              >
+                                {user.name}
+                              </Link>
+                            </h6>
+                          </td>
+                          <td data-label="batch">
+                            <h6>{` ${user.userType}`}</h6>
+                          </td>
+                          <td data-label="batch">
+                            <h6>{user.email}</h6>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </Paper>
+              </div>
+            </Grid>
+           </Grid>
         </Container>
       </div>
     </>
