@@ -1,19 +1,24 @@
+import './App.css';
 import React from "react";
-import Home from "./pages/Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./style/dark.scss";
-import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
+import Home from "./pages/StatisticsPageComponent/StatisticsPageComponent";
+import NavbarComponent from './components/NavbarComponent/NavbarComponent';
+import CategoryPageComponent from './pages/CategoryPageComponent/CategoryPageComponent';
+import UserDashboardPageComponent from './pages/UserDashboardPageComponent/UserDashboardPageComponent';
+import SPDashboardPageComponent from './pages/SPDashboardPageComponent/SPDashboardPageComponent';
+import AppointmentPageComponent from './pages/AppointmentPageComponent/AppointmentPageComponent';
 
 function App() {
-  const { darkMode } = useContext(DarkModeContext);
   return (
-    <div className={darkMode ? "app dark" : "app"}>
+    <div className="App">
       <BrowserRouter>
+        <NavbarComponent />
         <Routes>
-          <Route path="/">
-            <Route index element={<Home />} />
-          </Route>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/category" exact element={<CategoryPageComponent/>} />
+          <Route path="/client" exact element={<UserDashboardPageComponent/>} />
+          <Route path="/serviceprovider" exact element={<SPDashboardPageComponent/>} />
+          <Route path="/appointment" exact element={<AppointmentPageComponent/>} />
         </Routes>
       </BrowserRouter>
     </div>
