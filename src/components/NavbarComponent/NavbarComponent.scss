@@ -1,9 +1,5 @@
 .navbar {
-  background: linear-gradient(
-    90deg,
-    rgb(37, 67, 100) 0%,
-    rgba(0, 52, 89, 1) 100%
-  );
+  background: #ffffff;
   height: 80px;
   display: flex;
   justify-content: right;
@@ -22,7 +18,7 @@
 .navbar-logo {
   display: flex;
   width: 100%;
-  color: #fff;
+  color: #000000;
   margin: 0;
   cursor: pointer;
   text-decoration: none;
@@ -31,9 +27,6 @@
   //text-align: ;
   top: 29px;
   left: 20px;
-  &:hover {
-    color: rgb(255, 255, 255);
-  }
 
   .navlogo {
     margin-left: 10px;
@@ -54,7 +47,7 @@
 
   .nav-logo {
     text-decoration: none !important;
-    color: rgb(255, 255, 255);
+    color: #000000;
     height: 1.8rem;
     width: auto;
     padding-right: 5px;

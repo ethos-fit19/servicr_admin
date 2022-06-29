@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://servicr.herokuapp.com/api";
+const baseUrl = "http://localhost:4000/api";
 
 //users
 export const getUsers = () => {
